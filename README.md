@@ -14,12 +14,12 @@
 
 ## 准备工作
 
-**1.安装脚本所需要的相关包文件**
+**1. 安装脚本所需要的相关包文件**
 
 ```
 pip install requests lxml bs4
 ```
-**2.克隆/下载本脚本**
+**2. 克隆/下载本脚本**
 
 直接点击页面右上角的绿色按钮`Code`进行下载
 
@@ -55,8 +55,6 @@ python main.py --user [YourUsername] --pwd [YourPassword]
 
 1. 填写`users.py`中一个或多个用户的用户名与密码 
 2. 运行`auto.py`，需要常驻后台
-
-------
 
 # Github Actions（可选）
 
