@@ -10,6 +10,10 @@
 - 支持多用户
 - Github Actions自助打卡
 
+# 声明
+
+**当出现发烧等症状时需如实填报系统，不得使用本项目自动填报，由此产生的一切后果由用户本人承担。**
+
 # 使用方法
 
 ## 准备工作
@@ -17,7 +21,7 @@
 **1. 安装脚本所需要的相关包文件**
 
 ```
-pip install requests lxml bs4
+pip install requests lxml bs4 schedule
 ```
 **2. 克隆/下载本脚本**
 
@@ -58,8 +62,9 @@ python main.py --user [YourUsername] --pwd [YourPassword]
 
 # Github Actions（可选）
 
-
 **本功能较不稳定，容易出现错过打卡时间、打卡失败等情况，优先推荐使用常规脚本方式打卡！！！**
+
+**总之就是还有问题，不推荐使用！！！**
 
 本脚本支持使用Github Actions自助打卡，实现**无需本地常驻后台的自助打卡**
 
