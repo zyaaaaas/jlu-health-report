@@ -62,7 +62,7 @@ def check(username, password):
                 print(f"[{now_time}] {username} failed.")
 
         except Exception as e:
-            print(e)
+            print(e.message)
             print("Retrying...")
             time.sleep(30)
     print("Failed too many times, exiting...")
