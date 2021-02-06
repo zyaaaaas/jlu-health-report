@@ -5,7 +5,7 @@ on:
     - cron: '0 23 * * *'  # utc+8 7:00
   push:
     branches:
-      - master
+      - alpha
     paths-ignore:
       - "**/README.md"
 
