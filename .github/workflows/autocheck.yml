@@ -2,12 +2,8 @@ name: 'JLU autocheck bot'
 
 on:
   schedule:
+    - cron: '0 13 * * *'  # utc+8 21:00
     - cron: '0 23 * * *'  # utc+8 7:00
-  push:
-    branches:
-      - alpha
-    paths-ignore:
-      - "**/README.md"
 
 jobs:
   build:
