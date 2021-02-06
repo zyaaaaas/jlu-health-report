@@ -58,7 +58,7 @@ python main.py --user [YourUsername] --pwd [YourPassword]
 
 # Github Actions（可选）
 
-**本功能较不稳定，容易出现错过打卡时间、打卡失败等情况，优先推荐使用常规脚本方式打卡！！！**
+**2021.2.6 Github Actions已可正常使用，感谢[TychusLee](https://github.com/TychusLee)对相关bug的修复。PS：若无法启动工作流请见[Issue #3](https://github.com/gxywy/jlu-health-report/issues/3)**
 
 **2021.1.24 问题排查中，请关注后续更新**
 
