@@ -1,6 +1,8 @@
 import requests, json, time, re, argparse
 from bs4 import BeautifulSoup
 
+requests.packages.urllib3.disable_warnings()
+
 login_url = 'https://ehall.jlu.edu.cn/sso/login'
 form_url = 'https://ehall.jlu.edu.cn/infoplus/form/YJSMRDK/start'
 start_url = 'https://ehall.jlu.edu.cn/infoplus/interface/start'
@@ -13,6 +15,7 @@ def check(username, password):
     for _ in range(10):
         try:
             s = requests.Session()
+            s.verify= False
 
             headers = {'User-Agent': UA}
 
