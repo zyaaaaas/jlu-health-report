@@ -10,7 +10,7 @@ CHECK_SCHEDULES = [
 
 def check_all():
     for user in users:
-        check(user['username'], user['password'])
+        check(user['username'], user['password'], user["grade"])
 
 if __name__ == "__main__":
     for i in range(len(CHECK_SCHEDULES)):

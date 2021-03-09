@@ -11,7 +11,11 @@ action_url = 'https://ehall.jlu.edu.cn/infoplus/interface/doAction'
 
 UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36 Edg/87.0.664.47'
 
-def check(username, password):
+def get_formurl_by_grade(grade):
+    url = 'https://ehall.jlu.edu.cn/infoplus/form/' + grade.upper() + 'MRDK/start'
+    return url
+
+def check(username, password, grade='YJS'):
     for _ in range(10):
         try:
             s = requests.Session()
@@ -29,13 +33,13 @@ def check(username, password):
             s.post(url=login_url, data=data, headers=headers)
 
             #获取csrf_token
-            form_html = s.get(url=form_url, headers=headers)
+            form_html = s.get(url=get_formurl_by_grade(grade), headers=headers)
             soup = BeautifulSoup(form_html.text, 'lxml')
             csrf_token = soup.find(name="meta", attrs={"itemscope" :"csrfToken"}).get('content')
 
             #获取打卡地址
-            headers = {'User-Agent': UA,'Referer': form_url}
-            data = {'idc': 'YJSMRDK', 'csrfToken': csrf_token}
+            headers = {'User-Agent': UA,'Referer': get_formurl_by_grade(grade)}
+            data = {'idc': grade.upper() + 'MRDK', 'csrfToken': csrf_token}
             start_json = s.post(url=start_url, data=data, headers=headers)
             step_id = re.search('(?<=form/)\\d*(?=/render)', start_json.text)[0]
 
@@ -75,11 +79,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--user", default=None)
     parser.add_argument("--pwd", default=None)
+    parser.add_argument("--grade", default='YJS')
     args = parser.parse_args()
 
     if args.user != None and args.pwd != None:
-        check(username=args.user, password=args.pwd)
+        check(username=args.user, password=args.pwd, grade=args.grade)
     else:
         from users import *
         for user in users:
-            check(user['username'], user['password'])
+            check(user['username'], user['password'], user['grade'])

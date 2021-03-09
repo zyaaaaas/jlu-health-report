@@ -2,13 +2,14 @@
 
 
 
-吉林大学研究生自动健康打卡
+吉林大学本科生/研究生自动健康打卡
 
 - **自动获取并填入个人信息，无视打卡系统更新**
 - **使用request直接发起请求，无需使用chromedriver**
+- **Github Actions自助打卡**
 - 定时自动打卡
 - 支持多用户
-- Github Actions自助打卡
+
 
 # 使用方法
 
@@ -42,18 +43,18 @@ git clone https://github.com/gxywy/jlu-health-report.git
 - **单用户脚本模式**
 
 ```
-python main.py --user [YourUsername] --pwd [YourPassword]
+python main.py --user [YourUsername] --pwd [YourPassword] --grade [YJS/BKS]
 ```
+其中，最后一个参数若不填写，默认为`YJS`
 
 - **手动模式**
 
-1. 填写`users.py`中一个或多个用户的用户名与密码
+1. 填写`users.py`中一个或多个用户的用户名、密码、本科生/研究生（本科生填写`BKS`，研究生填写`YJS`）
 2. 运行`main.py`
-
 
 - **定时自动模式**
 
-1. 填写`users.py`中一个或多个用户的用户名与密码 
+1. 填写`users.py`中一个或多个用户的用户名、密码、本科生/研究生（本科生填写`BKS`，研究生填写`YJS`）
 2. 运行`auto.py`，需要常驻后台
 
 # Github Actions（可选）
@@ -66,7 +67,7 @@ python main.py --user [YourUsername] --pwd [YourPassword]
 
 1. fork本repo
 
-2. 点击`Settings->Secrets`，之后点击右上角的`New repository secret`添加2个secret
+2. 点击`Settings->Secrets`，之后点击右上角的`New repository secret`添加3个secret
 
    ![image-20210113125253752](imgs/image-20210113125253752.png)
 
@@ -74,11 +75,13 @@ python main.py --user [YourUsername] --pwd [YourPassword]
 
 4. 第二个，`Name`字段中输入`MY_PASSWORD`，`Value`字段中输入*你的密码*
 
-5. 添加2个secrets后如图
+5. 第三个，`Name`字段中输入`MY_GRADE`，`Value`字段中输入`YJS`或`BKS` （若不填写，默认`YJS`）
+
+6. 添加3个secrets后如图
 
    ![image-20210113125019736](imgs/image-20210113125019736.png)
 
-6. 最后点击repo首页顶部的`Actions`即可查看每日打卡情况
+7. 最后点击repo首页顶部的`Actions`即可查看每日打卡情况
 
    ![image-20210113125506120](imgs/image-20210113125506120.png)
 

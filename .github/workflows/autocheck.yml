@@ -25,4 +25,5 @@ jobs:
         env:
           USERNAME: ${{ secrets.MY_USERNAME }}
           PASSWORD: ${{ secrets.MY_PASSWORD }}
-        run: python main.py --user $USERNAME --pwd $PASSWORD
+          GRADE: ${{ secrets.MY_GRADE }}
+        run: python main.py --user $USERNAME --pwd $PASSWORD --grade $GRADE
