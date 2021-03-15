@@ -59,7 +59,7 @@ python main.py --user [YourUsername] --pwd [YourPassword] --grade [YJS/BKS]
 
 # Github Actions（可选）
 
-**2021.2.6 Github Actions已可正常使用，感谢[TychusLee](https://github.com/TychusLee)对相关bug的修复。PS：若无法启动工作流请见[Issue #3](https://github.com/gxywy/jlu-health-report/issues/3)**
+**2021.2.6 Github Actions已可正常使用，感谢[TychusLee](https://github.com/TychusLee)对相关bug的修复**
 
 **2021.1.24 问题排查中，请关注后续更新**
 
@@ -71,20 +71,28 @@ python main.py --user [YourUsername] --pwd [YourPassword] --grade [YJS/BKS]
 
    ![image-20210113125253752](imgs/image-20210113125253752.png)
 
-3. 第一个，`Name`字段中输入`MY_USERNAME`，`Value`字段中输入*你的用户名*
+   第一个，`Name`字段中输入`MY_USERNAME`，`Value`字段中输入*你的用户名*
 
-4. 第二个，`Name`字段中输入`MY_PASSWORD`，`Value`字段中输入*你的密码*
+   第二个，`Name`字段中输入`MY_PASSWORD`，`Value`字段中输入*你的密码*
 
-5. 第三个，`Name`字段中输入`MY_GRADE`，`Value`字段中输入`YJS`或`BKS` （若不填写，默认`YJS`）
+   第三个，`Name`字段中输入`MY_GRADE`，`Value`字段中输入`YJS`或`BKS` （若不填写，默认`YJS`）
 
 6. 添加3个secrets后如图
 
    ![image-20210113125019736](imgs/image-20210113125019736.png)
 
-7. 最后点击repo首页顶部的`Actions`即可查看每日打卡情况
+7. 点击repo页面顶部的`Actions`，点击页面中的`Enable workflow`，启用工作流
+
+   ![image-20210113125506120](imgs/image202103151310.png)
+
+9. 给fork后的repo(自己的repo)页面右上角点击`Star`来激活工作流
+
+10. 最后点击repo页面顶部的`Actions`即可查看打卡记录和每日打卡情况
 
    ![image-20210113125506120](imgs/image-20210113125506120.png)
 
 # 声明
+
+⚠**当出现发烧等症状时需如实填报系统，不得使用本项目自动填报，否则产生的一切后果由用户本人承担。**
 
 **本程序以你所见到的样子呈现给你，不附带任何明示或暗示的担保，包括但不限于对功能合法性或对特定用途适用性的保证。在运行之前，你有责任理解其源代码的工作原理，并确认这是你想要执行的，本程序进行的操作都应被视为你本人进行、或由你授权代你进行的操作。在任何情况下，本程序作者与你决定运行本程序无关，不为你运行此程序所造成的任何损失、受到的处罚以及造成的法律后果等负任何责任。**
